@@ -5,7 +5,7 @@ public class Agenda {
     static int pozitie = 0;
 
     public static void main(String[] args) {
-        int optiune = -1;
+        int optiune;
 
         do {
             afisareMeniu();
@@ -35,6 +35,7 @@ public class Agenda {
 
                 case 5: {
                     cautare(citireNume("Cautare nume: "));
+                    break;
                 }
             }
         } while (optiune != 0);
@@ -80,7 +81,7 @@ public class Agenda {
 
     public static void afisare() {
         System.out.println("Agenda:");
-        for (int i = 0; i < persons.length; i++) {
+        for (int i = 0; i < pozitie; i++) {
             if (persons[i] != null) {
                 System.out.println(persons[i].nume + " " + persons[i].telefon);
             }
@@ -103,23 +104,22 @@ public class Agenda {
 
     public static void stergere() {
         String nume = citireNume("Da-ti numele de sters: ");
-        int indexCautat = -1;
+        int indexCautat;
 
         indexCautat = findIndex(nume);
         System.out.println("Am sters urmatorul contact: " + persons[indexCautat].nume);
-        if (indexCautat != -1) {
-            persons[indexCautat] = null;
+
+        for (int i = indexCautat; i < persons.length-1; i++) {
+            persons[i] = persons[i + 1];
         }
         pozitie--;
-
-        // De mutat sirul !!!!!!!!
     }
 
     public static void modificare() {
         Scanner scan = new Scanner(System.in);
         String nume = citireNume("Da-ti numele de modificat: ");
 
-        int indexCautat = -1;
+        int indexCautat;
         indexCautat = findIndex(nume);
 
         if (indexCautat != -1) {
@@ -148,7 +148,7 @@ public class Agenda {
         }
 
         if (found == false) {
-            System.out.println("Nu m gasit contactul in agenda!");
+            System.out.println("Nu am gasit contactul in agenda!");
         }
     }
 }
