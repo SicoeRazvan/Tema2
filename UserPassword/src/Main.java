@@ -13,21 +13,20 @@ public class Main {
         int incercari = 0;
 
         users[0] = new User();
-        users[0].user = "ionel";
-        users[0].parola = "a";
+        users[0].user = "Ion";
+        users[0].parola = "12345";
 
 
         users[1] = new User();
-        users[1].user = "maria";
-        users[1].parola = "b";
+        users[1].user = "Tom";
+        users[1].parola = "789";
 
         users[2] = new User();
-        users[2].user = "ioana";
-        users[2].parola = "c";
+        users[2].user = "Maria";
+        users[2].parola = "abc";
 
         String u;
         String p;
-
 
         while (incercari < 3) {
             u = citireNume("user: ");
@@ -42,8 +41,6 @@ public class Main {
                     System.out.println(e);
                 }
                 break;
-            }else{
-                System.out.println("Mai incearca!");
             }
 
             incercari++;
