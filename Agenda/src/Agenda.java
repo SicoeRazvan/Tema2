@@ -39,7 +39,6 @@ public class Agenda {
                 }
             }
         } while (optiune != 0);
-
     }
 
     public static void afisareMeniu() {
@@ -76,7 +75,6 @@ public class Agenda {
         } else {
             System.out.println("Agenda e plina. Nu mai poti adauga contacte noi");
         }
-
     }
 
     public static void afisare() {
