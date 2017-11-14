@@ -13,7 +13,7 @@ public class Agenda {
             Scanner sc = new Scanner(System.in);
             optiune = sc.nextInt();
 
-            if (optiune > 0 || optiune == 0 || optiune < 6) {
+            if (optiune >= 0 && optiune <= 5) {
                 switch (optiune) {
                     case 1: {
                         adaugare();
