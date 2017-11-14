@@ -107,12 +107,18 @@ public class Agenda {
         int indexCautat;
 
         indexCautat = findIndex(nume);
-        System.out.println("Am sters urmatorul contact: " + persons[indexCautat].nume);
 
-        for (int i = indexCautat; i < persons.length-1; i++) {
-            persons[i] = persons[i + 1];
+        if(indexCautat != -1) {
+            System.out.println("Am sters urmatorul contact: " + persons[indexCautat].nume);
+            for (int i = indexCautat; i < persons.length-1; i++) {
+                persons[i] = persons[i + 1];
+            }
+            pozitie--;
+        }else{
+            System.out.println("Nu am gasit contactul");
         }
-        pozitie--;
+
+
     }
 
     public static void modificare() {
