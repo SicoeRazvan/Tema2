@@ -117,8 +117,6 @@ public class Agenda {
         }else{
             System.out.println("Nu am gasit contactul");
         }
-
-
     }
 
     public static void modificare() {
