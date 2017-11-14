@@ -12,33 +12,38 @@ public class Agenda {
             System.out.print("Optiune -> ");
             Scanner sc = new Scanner(System.in);
             optiune = sc.nextInt();
-            switch (optiune) {
-                case 1: {
-                    adaugare();
-                    break;
-                }
 
-                case 2: {
-                    afisare();
-                    break;
-                }
+            if (optiune > 0 || optiune == 0) {
+                switch (optiune) {
+                    case 1: {
+                        adaugare();
+                        break;
+                    }
 
-                case 3: {
-                    stergere();
-                    break;
-                }
+                    case 2: {
+                        afisare();
+                        break;
+                    }
 
-                case 4: {
-                    modificare();
-                    break;
-                }
+                    case 3: {
+                        stergere();
+                        break;
+                    }
 
-                case 5: {
-                    cautare(citireNume("Cautare nume: "));
-                    break;
+                    case 4: {
+                        modificare();
+                        break;
+                    }
+
+                    case 5: {
+                        cautare(citireNume("Cautare nume: "));
+                        break;
+                    }
                 }
+            }else{
+                System.out.println("Optiune invalida");
             }
-        } while (optiune != 0);
+        } while (optiune != 0) ;
     }
 
     public static void afisareMeniu() {
@@ -75,6 +80,7 @@ public class Agenda {
         } else {
             System.out.println("Agenda e plina. Nu mai poti adauga contacte noi");
         }
+
     }
 
     public static void afisare() {
